@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+<div id="dv"></div>
+<input type="button" value="渐变" id="btn"/>
+<script src="common.js"></script>
+<script>
+    my$("btn").onclick=function(){
+        var opa = 10;
+       var timeId =  setInterval(function(){
+            // 改变div的 opacity
+            opa--;
+            my$("dv").style.opacity=opa/10;
+            if(opa ===0){
+                clearInterval(timeId); //清理定时器
+            }
+        },100)
+    };
+
+</script>
+</body>
+</html>

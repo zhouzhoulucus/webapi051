@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<textarea name="texta" id="txt" cols="30" rows="10">
+    这个世界就是么疯狂,你不同意, 我就不让你注册
+</textarea>
+<input type="button" value="请仔细阅读协议(5)" id="btn" disabled="disabled"/>
+
+<script src="common.js"></script>
+<script>
+    var count = 1;
+    var idd = setInterval(function(){
+        my$("btn").value="请仔细阅读协议("+(5-count)+")";
+        if(count ==5){
+            clearInterval(idd);
+            my$("btn").disabled=false;
+            my$("btn").value="同意";
+        }
+
+        count++;
+    },1000)
+
+
+
+
+
+</script>
+</body>
+</html>
